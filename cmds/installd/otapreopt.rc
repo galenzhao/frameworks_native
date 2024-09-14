@@ -6,3 +6,9 @@ on post-fs-data
     # But now the relabeling is annoying as there is no force option available here. So
     # explicitly list all the ISAs we know.
     restorecon_recursive /data/dalvik-cache/arm /data/dalvik-cache/arm64 /data/dalvik-cache/riscv64 /data/dalvik-cache/x86 /data/dalvik-cache/x86_64
+
+    mkdir /data/system_updates 0770 system cache
+    restorecon /data/system_updates
+    mkdir /data/system_updates/ota 0777 system cache
+    restorecon /data/system_updates/ota
+    
